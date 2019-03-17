@@ -1,0 +1,26 @@
+{% extends "test/base.html" %}
+{% load i18n %}
+{% block content %}
+    <div>
+        <h1>{% trans "Test:" %} {{ test }}</h1>
+        <h2><a href="{% url 'note:detail_of_test' test.id %}" >{% trans "back" %}</a></h2>
+        {% for q in test_questions %}
+
+        <form action="{% url 'note:remove_q' test.id q.id %}" method="post">
+            {% csrf_token %}
+        <p>{{ q }} <input type="submit" value="{% trans 'remove' %}"/></p>
+        {% endfor %}
+        <h1>{% trans "Avalible questions:" %}</h1>
+        {% if questions %}
+        {% for q in questions %}
+        </form>
+            <form action="{% url 'note:add_q' test.id q.id %}" method="post">
+                {% csrf_token %}
+        <p>{{ q }} <input type="submit" value="{% trans 'add' %}" /></p>
+        {% endfor %}
+        {% else %}
+        <h2>{% trans "no questions yet!" %}</h2>
+        {% endif %}
+        </form>
+    </div>
+{% endblock %}

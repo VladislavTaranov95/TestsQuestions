@@ -1,0 +1,18 @@
+{% extends "test/base.html" %}
+{% block content %}   
+    {% if tests %}
+    <div class="div_aviable_tests">
+    Avalible tests:
+        {% if not_found_tests %}
+            Tests not found!
+        {% endif %}
+    </div>
+    <div>
+    {% for test in tests %}
+        <div class="div_test">
+            <a href="{% url 'note:detail_of_test' test.id %}" >{{ test }}</a>
+        </div>
+    {% endfor %}
+    </div>
+    {% endif %}
+{% endblock %}

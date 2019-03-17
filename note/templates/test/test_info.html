@@ -1,0 +1,34 @@
+{% extends 'test/base.html' %}
+{% block content %}
+    <div>
+        <p><h1>Test:{{ test }}</h1> </p>
+        {% if test.user %}
+        <p><h2>By:{{ test.user }}</h2></p>
+        {% endif %}
+        <h3><a href="{% url 'note:model_notes' 'tests' test.id %}">Discuss...</a></h3>
+        {% if questions %}
+        <h2>Questions:</h2>
+        {% for q in questions %}
+        <p>{{ q }} </p>
+        {% endfor %}
+        {% endif %}
+
+        <div class="div_user_panel">
+            <a href="{% url 'note:run_test' test.id %}">Start test</a> |
+            <a href="{% url 'note:delete_test' test.id %}">Delete</a> |
+            <a href="{% url 'note:edit_test' test.id %}">Edit</a>
+        </div>
+
+        {% if run_tests %}
+        <div class="div_passed_tests">
+            <h1>Testes passed:</h1>
+
+            {% for rt in run_tests %}
+            <h2><p><a href="{% url 'note:run_test_detail' rt.id %}">{{ rt.name }}</a></p></h2>
+            {% endfor %}
+
+            {% endif %}
+        </div>
+
+    </div>
+{% endblock %}

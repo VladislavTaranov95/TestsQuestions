@@ -1,0 +1,15 @@
+{% extends "test/base.html" %}
+{% block content %}
+    <div>
+        <h3><a href="{% url 'note:model_notes' 'run_tests' run_test.0.id %}">Discuss...</a></h3></p>
+        <h2>Run test:{{ run_test.0.name }}</h2>
+        {% if run_test.0.user %}
+        <h2>By:{{ run_test.0.user }}</h2>
+        {% endif %}
+        {% for rta in run_tests_answers %}
+        <p>Question:{{ rta.question }}</p>
+        <p>Answer:{{ rta.answer }}</p>
+        {% endfor %}
+
+    </div>
+{% endblock %}

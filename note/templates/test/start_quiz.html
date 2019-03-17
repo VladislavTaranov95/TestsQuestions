@@ -1,0 +1,21 @@
+{% extends "test/base.html" %}
+{% block content %}
+    <form method="post">
+        <h1>Test:{{ test }}</h1>
+        <h2><a href="{% url 'note:detail_of_test' test.id %}" >Back</a></h2>
+        {% csrf_token %}
+            <div>
+                {{ manage_form.management_form }}
+                {% for q, f in formset.items %}
+                <h2><p>{{ q }}</p></h2>
+                <p>{{ f }}</p>
+                {% endfor %}
+
+            </div>
+        {% if formset.items %}
+        <input type="submit" name="start" value="Pass">
+        {% else %}
+        <h1>No questions yet!</h1>
+        {% endif %}
+    </form>
+{% endblock %}

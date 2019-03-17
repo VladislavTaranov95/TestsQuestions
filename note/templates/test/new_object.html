@@ -1,0 +1,22 @@
+{% extends "test/base.html" %}
+{% block content %}
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            <h2>New" {{ name }}!</h2>
+            {{ form.as_p }}
+            <input type="submit" name="submit" value="Submit">
+        </form>
+        {% if questions %}
+        <h1>Avalible questions:</h1>
+            <div>
+            {% for quiz in questions %}
+                <div>
+                    {{ quiz }}
+                    <a href="{% url 'note:delete_question' quiz.id %}"> Delete</a>
+                </div>
+            {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

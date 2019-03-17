@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/main_page.css"/>
+    <title>"Let's pass some tests..."</title>
+</head>
+<body>
+    <div class="div_header">
+        <a class="main_href" href="/">Let's pass some tests...</a>
+        {% if user.is_authenticated %}
+        <p>Logged as: {{ user.username }}, <a href="{% url 'note:logout' %}">logout</a></p>
+        {% else %}
+        <p>Please, sign up!  <a href="{% url 'note:signup' %}">Register</a>
+            /<a href="{% url 'note:login' %}">Login</a></p>
+        {% endif %}  
+        <form>
+            <input name="title" id="title">
+            <input type="submit" name="search" value="Search">
+        </form>
+    </div>
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

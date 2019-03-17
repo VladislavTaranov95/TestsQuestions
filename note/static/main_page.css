@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(201, 201, 201);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.div_header {
+    background-color: rgb(102, 238, 192);
+    height: 60px;
+    text-align: center;
+    font-size: 30px;
+    font-stretch: semi-expanded;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.div_header p {
+    float: left;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 37px;
+    padding-left: 5px;
+    margin: 0;
+}
+
+.div_header form {
+    float: right;
+    display: block;
+    padding-top: 22px;
+    padding-right: 5px;
+}
+
+.main_href {
+    color: rgb(114, 114, 114); 
+    text-decoration: none;
+    font-family: 'Segoe UI';
+    vertical-align: middle;
+    width: 10px;
+   }
+
+.div_aviable_tests {
+    text-align: center;
+    font-size: 18px;
+    font-stretch: semi-expanded;
+    padding-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.div_test {
+    padding-top: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    text-align: center;
+    border-bottom: 2px solid rgb(75, 75, 75);
+    width: 20%;
+    margin: 0 auto;
+    height: 40px;
+}
+
+.div_test a {
+    text-decoration: none;
+}
+
+.div_passed_tests {
+    background-color: rgb(146, 146, 146);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.div_user_panel a{
+    text-decoration: none;
+    color: rgb(32, 113, 219);
+}
+
+.div_login_form {
+    text-align: center;
+}
